@@ -1,0 +1,11 @@
+<header class="header">
+  <div class="header__bitmap">
+    <img src="../assets/Bitmap.png">
+  </div>
+  <div (click)="showCart()" class="header__cart">
+    <i class="fas fa-cart-arrow-down header__cart-icon"></i>
+    <div class="header__product-count"> {{productsCount$ | async}}</div>
+  </div>
+</header>
+
+<app-shopping-cart *ngIf="isCartVisible" (onHided)="hideCart()"></app-shopping-cart>

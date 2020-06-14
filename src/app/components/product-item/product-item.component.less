@@ -1,0 +1,99 @@
+@import '../../shared/styles/mixins';
+
+@font-face {
+  .font(@fontMedium; Roboto-Medium);
+}
+
+.product {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.0697115);
+  margin-bottom: 30px;
+
+  &__image {
+    position: relative;
+  }
+
+  &__active-image {
+    cursor: pointer;
+    max-width: 282px;
+  }
+
+  &__details {
+    padding: 15px 20px 18px 20px;
+    cursor: pointer;
+  }
+
+  &__type {
+    padding-bottom: 2px;
+  }
+
+  &__name {
+    font-size: 16px;
+  }
+
+  &__price {
+    font-size: 23px;
+    padding-top: 15px;
+    margin: auto;
+  }
+
+  &__name, &__price {
+    font-family: Roboto-Medium;
+  }
+
+  &__count, &__type {
+    color: #A3A3A3;
+  }
+
+  &__price, &__count {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__slider {
+    position: absolute;
+    bottom: 0px;
+    padding: 10px 10px 0px 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  &__slider-arrow {
+    cursor: pointer;
+
+    &__left {
+      margin-right: 10px;
+    }
+
+    &__right {
+      margin-left: 15px;
+    }
+
+    &__disabled {
+      color: #F0F0F0;
+      cursor: default;
+    }
+  }
+
+  &__slider-image-wrap {
+    width: 40px;
+    height: 40px;
+    padding-left: 5px;
+  }
+
+  &__slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid black;
+    }
+    
+    &__border {
+      border: 1px solid black;
+    }
+  }
+}

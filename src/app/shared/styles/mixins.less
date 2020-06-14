@@ -1,0 +1,10 @@
+@fontRegular: 'Roboto-Regular';
+@fontLight: 'Roboto-Light';
+@fontMedium: 'Roboto-Medium';
+
+.font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
+  font-family: '@{fontName}';
+  src: url('../../../assets/fonts/@{urlName}.ttf') format('truetype');
+  font-weight: @weight;
+  font-style: @style;
+}

@@ -1,0 +1,31 @@
+<aside class="menu">
+  <ul class="menu__list">
+    <li (click)="changeFilter(filterType.ALL)"
+        class="menu__item"
+        [class.menu__item__medium-font] = "isFilterActive(filterType.ALL)">ВСЕ</li>
+    <li (click)="changeFilter(filterType.CLOAK)"
+        [class.menu__item__medium-font] = "isFilterActive(filterType.CLOAK)"
+        class="menu__item">ПЛАЩИ</li>
+    <li (click)="changeFilter(filterType.SNEAKERS)"
+        [class.menu__item__medium-font] = "isFilterActive(filterType.SNEAKERS)"
+        class="menu__item">КРОССОВКИ</li>
+    <li (click)="changeFilter(filterType.SHIRT)"
+        [class.menu__item__medium-font] = "isFilterActive(filterType.SHIRT)"
+        class="menu__item">РУБАШКИ</li>
+    <li (click)="changeFilter(filterType.PANTS)"
+        [class.menu__item__medium-font] = "isFilterActive(filterType.PANTS)"
+        class="menu__item">БРЮКИ</li>
+    <li class="menu__item menu__item__sort-option" (click)="toggleSortListVisability()">
+      <span>Сортировать</span>
+      <img class="menu__sort-arrow" src="../assets/arrow-{{arrowType}}.png">
+    </li>
+  </ul>
+  <div *ngIf="isSortListVisible" class="sort">
+    <ul class="sort__list">
+      <li (click)="changeSortType(sortType.HIGH_COST)" class="sort__item">От дорогих к дешевым</li>
+      <li (click)="changeSortType(sortType.LOW_COST)" class="sort__item">От дешевых к дорогим</li>
+      <li (click)="changeSortType(sortType.POPULAR)" class="sort__item">Популярные</li>
+      <li (click)="changeSortType(sortType.NEW)" class="sort__item">Новые</li>
+    </ul>
+  </div>
+</aside>

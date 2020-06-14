@@ -1,0 +1,34 @@
+<div (mouseover)="changeSliderVisability($event, true)"
+     (mouseout)="changeSliderVisability($event, false)"
+     class="product">
+  <div class="product__image">
+    <img (click)="openProduct(product.id)"
+         class="product__active-image"
+         src="../assets/{{imagePath}}.png">
+    <div *ngIf="isSliderVisible" (mouseover)="changeSliderVisability($event, true)" class="product__slider">
+      <i (click)="slideImages(back)"
+         class="fas fa-chevron-left product__slider-arrow product__slider-arrow__left"
+         src="../../../assets/arrow-down.png"
+         [class.product__slider-arrow__disabled] = "isDisabledControl(back)"></i>
+      <div *ngFor="let item of product.images"
+           class="product__slider-image-wrap">
+        <img (click)="changeImage(item)"
+             class="product__slider-image"
+             [class.product__slider-image__border] = "isImageActive(item)"
+             src="../../../assets/{{item}}.png">
+      </div>
+      <i (click)="slideImages(forward)"
+         class="fas fa-chevron-right product__slider-arrow product__slider-arrow__right"
+         src="../../../assets/arrow-up.png"
+         [class.product__slider-arrow__disabled] = "isDisabledControl(forward)"></i>
+    </div>
+  </div>
+  <div (click)="openProduct(product.id)" class="product__details">
+    <div class="product__type">{{product.category}}</div>
+    <div class="product__name">{{product.name}}</div>
+    <div class="product__price">{{product.price}}</div>
+    <div class="product__count">
+      <span>на складе: {{product.count}}</span>
+    </div>
+  </div>
+</div>

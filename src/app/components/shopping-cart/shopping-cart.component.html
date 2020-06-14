@@ -1,0 +1,31 @@
+<div class="cart">
+  <div class="cart__close">
+    <i (click)="hideCart()" class="fas fa-times cart__close-button"></i>
+  </div>
+  <div class="cart__products-list">
+    <div *ngFor="let product of productsList$ | async" class="cart__products-item">
+      <div class="cart__product-image-wrap">
+        <img class="cart__product-image" src="../assets/{{product.images[0]}}.png">
+      </div>
+      <div class="cart__product-details">
+        <span class="cart__product-name">{{product.name}}</span>
+        <div class="cart__item-managing">
+          <span>
+            <span (click)="changeProductCount(product, false)" class="cart__manage-count-button">-</span>
+            <span> {{product.count}} </span>
+            <span (click)="changeProductCount(product, true)" class="cart__manage-count-button">+</span></span>
+          <span>${{product.price}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart__results">
+    <div class="cart__cost">
+      <span>Итого</span>
+      <span>${{totalPrice}}</span>
+    </div>
+
+    <div class="cart__buy-button">КУПИТЬ</div>
+  </div>
+</div>

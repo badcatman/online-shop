@@ -1,0 +1,59 @@
+@import '../../shared/styles/mixins';
+
+@font-face {
+  .font(@fontLight; Roboto-Light);
+}
+
+@font-face {
+  .font(@fontMedium; Roboto-Medium);
+}
+
+.menu {
+  min-width: 192px;
+  padding-right: 50px;
+
+  &__list {
+    list-style: none;
+    margin-top: 7px;
+  }
+
+  &__item {
+    font-size: 12px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-family: Roboto-Light;
+
+    &__sort-option {
+      padding-top: 20px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    &__medium-font {
+      font-family: Roboto-Medium;
+    }
+  }
+
+  &__sort-arrow {
+    margin-left: 11px;
+  }
+}
+
+.sort {
+  font-family: Roboto-Light;
+  font-size: 14px;
+  min-width: 192px;
+
+  &__list {
+    border: 1px solid #000000;
+    padding: 20px 15px 0px 20px;
+    list-style: none;
+  }
+
+  &__item {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+}

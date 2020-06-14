@@ -1,0 +1,120 @@
+@import '../../shared/styles/mixins';
+
+@font-face {
+  .font(@fontLight; Roboto-Light);
+}
+
+@font-face {
+  .font(@fontMedium; Roboto-Medium);
+}
+
+.cart {
+  background-color: #2B2B2B;
+  color: white;
+  width: 340px;
+  height: 545px;
+  position: fixed;
+  padding: 40px 0;
+  top: 0px;
+  right: 0px;
+  font-family: Roboto-Medium;
+  z-index: 1;
+
+  &__close {
+    padding: 4px 37px 84px 37px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+  }
+
+  &__close-button {
+    cursor: pointer;
+  }
+
+  &__products-list {
+    border-top: 1px solid #424242;
+    max-height: 250px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 7px; height: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 50px;
+      background-color: #666;
+      border-radius: 5px;
+    }
+  }
+
+  &__products-item {
+    border-bottom: 1px solid #424242;
+    padding: 20px 32px 20px 40px;
+    display: flex;
+  }
+
+  &__product-image-wrap {
+    width: 83px;
+    height: 83px;
+  }
+
+  &__product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+
+  &__product-details {
+    padding: 25px 0 0 17px;
+    width: 170px;
+  }
+
+  &__product-name {
+    font-family: Roboto-Light;
+    font-size: 12px;
+  }
+
+  &__item-managing {
+    padding-top: 6px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+  }
+
+  &__cost {
+    padding: 40px 31px 0 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__manage-count-button {
+    cursor: pointer;
+  }
+
+  &__buy-button {
+    border: 2px solid #FFFFFF;
+    width: 72px;
+    padding: 22px 94px;
+    font-size: 16px;
+    margin: 0px 40px;
+    cursor: pointer;
+  }
+}
