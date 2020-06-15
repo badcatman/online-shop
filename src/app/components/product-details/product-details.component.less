@@ -13,13 +13,11 @@
   }
 
   &__active-image {
-    cursor: pointer;
     max-width: 282px;
   }
 
   &__details {
     padding: 15px 20px 18px 20px;
-    cursor: pointer;
   }
 
   &__type {
@@ -57,5 +55,15 @@
     padding: 22px 94px;
     font-size: 16px;
     cursor: pointer;
+
+    &:hover {
+      color: black;
+      border: 2px solid black;
+    }
+
+    &:active {
+      color: #999999;
+      border: 2px solid #999999;
+    }
   }
 }
