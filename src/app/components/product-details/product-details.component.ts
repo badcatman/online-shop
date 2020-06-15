@@ -28,7 +28,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     this.activateRoute.params
     .pipe(
       takeUntil(this.destroy$),
-      switchMap(({id}) => this.productsService.getProduct(+id))
+      switchMap(({id}) => this.productsService.getProduct$(+id))
     )
       .subscribe((data: Product) => this.product = data);
   }

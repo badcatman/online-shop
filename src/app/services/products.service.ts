@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Product } from '../models/product-model';
-import { of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
-  public products = [
+  private products = [
     {
       id: 1,
       name: 'Рубашка на пуговицах',
@@ -64,11 +63,11 @@ export class ProductsService {
 
   constructor() {}
 
-  public getProducts(): Observable<Product[]> {
+  public getProducts$(): Observable<Product[]> {
     return of(this.products);
   }
 
-  public getProduct(id: number): Observable<Product> {
+  public getProduct$(id: number): Observable<Product> {
     return of(this.products.find((item) => item.id === id));
   }
 }

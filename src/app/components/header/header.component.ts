@@ -18,10 +18,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsCount$ = this.store.pipe(select(getCartProducts))
-      .pipe(map((list) => {
-        return list.length ? list.map((product) => product.count)
-          .reduce((accumulator, currentValue) => accumulator + currentValue) : 0;
-      }));
+      .pipe(map((list) => list.length ? list.reduce((accumulator, product) => accumulator + product.count, 0) : 0));
   }
 
   public showCart(): void {

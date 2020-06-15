@@ -25,9 +25,9 @@ export class ProductListComponent implements OnInit {
       this.store.pipe(select(getActiveFilter)),
       this.store.pipe(select(getSortType))
     ]).pipe(
-      map(([list, activeFilter, sortType]) => {
-        let productsList = (activeFilter !== FilterType.ALL ? list.filter(({type}) => type === activeFilter) : list);
-        productsList = productsList.slice().sort((prev, next) => {
+      map(([list, activeFilter, sortType]) => list
+        .filter(({type}) => activeFilter !== FilterType.ALL ? type === activeFilter : true)
+        .sort((prev, next) => {
           switch (sortType) {
             case SortType.LOW_COST:
               return prev.price - next.price;
@@ -44,11 +44,28 @@ export class ProductListComponent implements OnInit {
             default:
               return prev.count - next.count;
           }
-        });
-
-        return productsList;
-      })
+        })
+      )
     );
+        // let productsList = (activeFilter !== FilterType.ALL ? list.filter(({type}) => type === activeFilter) : list);
+        // productsList = productsList.slice().sort((prev, next) => {
+        //   switch (sortType) {
+        //     case SortType.LOW_COST:
+        //       return prev.price - next.price;
+        //       break;
+        //     case SortType.HIGH_COST:
+        //       return next.price - prev.price;
+        //       break;
+        //     case SortType.NEW:
+        //       return next.count - prev.count;
+        //       break;
+        //     case SortType.POPULAR:
+        //       return prev.count - next.count;
+        //       break;
+        //     default:
+        //       return prev.count - next.count;
+        //   }
+        // });
   }
 
 }

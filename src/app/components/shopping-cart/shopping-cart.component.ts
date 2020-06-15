@@ -22,8 +22,7 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit(): void {
     this.productsList$ = this.store.pipe(select(getCartProducts))
       .pipe(tap((list) => {
-        this.totalPrice = list.length ? list.map((product) => product.price * product.count)
-          .reduce((accumulator, currentValue) => accumulator + currentValue) : 0;
+        this.totalPrice = list.length ? list.reduce((accumulator, product) => accumulator + product.price * product.count, 0) : 0;
       }));
   }
 

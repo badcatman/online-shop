@@ -22,7 +22,7 @@ export class ProductsEffects {
     this.getProducts = this.actions$.pipe(
       ofType<GetProducts>(ProductsActionTypes.GetProducts),
       switchMap(() =>
-        this.productsService.getProducts().pipe(
+        this.productsService.getProducts$().pipe(
           map(data => new GetProductsSuccess(data)),
           catchError(err => of(new GetProductsFailed(err)))
         )
