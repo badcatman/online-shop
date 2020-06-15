@@ -1,3 +1,7 @@
+Вместо страницы товара оставил заглушку, но с рабочей кнопкой "В КОРЗИНУ".
+В корзину можно как добавлять товары, так и удалять их оттуда.
+
+
 # OnlineStoreApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
